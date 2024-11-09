@@ -3,7 +3,7 @@ const router = express.Router();
 const { admin, db } = require("./firebase");
 
 router.get("/", async (req, res) => {
-  const usersSnapshot = await db.collection("userData").get();
+  const usersSnapshot = await db.collection("client_data").get();
 
   const usersWithTokens = [];
   usersSnapshot.forEach((doc) => {
