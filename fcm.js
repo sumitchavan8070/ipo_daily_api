@@ -7,10 +7,10 @@ router.get("/", async (req, res) => {
 
   const usersWithTokens = [];
   usersSnapshot.forEach((doc) => {
-    const userData = doc.data();
+    const client_data = doc.data();
 
-    if (userData.token) {
-      usersWithTokens.push(userData);
+    if (client_data.token) {
+      usersWithTokens.push(client_data);
     }
   });
 
