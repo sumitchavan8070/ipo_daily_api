@@ -82,8 +82,29 @@ app.use("/app/fcm", fcm);
 app.use("/app/common-details", cacheMiddleware, commonDetails);
 // -------------------------------------------------------------------------------------------------------
 app.get("/", (req, res) => {
-  res.send("API is running");
+  res.send(`
+    <h1>Welcome to IPO Daily API</h1>
+    <h3>📈 IPO Daily – Your Ultimate Guide to IPO Investments.</h3>
+
+<p>IPO Daily 📲 offers everything you need for successful IPO investing, covering both Mainboard and SME IPOs. Get real-time alerts 🔔 on new listings, live subscriptions 📊, allotments, and Grey Market Premiums 🏷️ to keep you in the know. Perfect for staying ahead in the IPO world!
+
+<h2>✨ Key Highlights:</h2>
+<p>&bull;&emsp;📊 Track Mainboard & SME IPOs – with live status updates</p>
+<p>&bull;&emsp;📈 Live Subscription Details – view real-time progress </p>
+<p>&bull;&emsp; 🔔 Allotment Notifications – never miss an IPO allotment </p>
+<p>&bull;&emsp; 💰 Grey Market Premium (GMP) – stay updated on price trends</p>
+<p>&bull;&emsp; 💹 In-depth Financial Insights – explore price bands, past performances, and more</p>
+<p>&bull;&emsp; 📰 Latest IPO Blogs & News – stay informed on all things IPO </p>
+
+
+<p>Make smart investment decisions with IPO Daily—your all-in-one IPO tracker and alert tool! 🚀</p>
+
+<p>Download Meadhikari and make exam success achievable with top-notch resources and tools for MPSC and Maharashtra exam preparation.</p>
+    
+
+  `);
 });
+
 
 app.get("/api/clearCache", (req, res) => {
   console.log("Cache cleared successfully");
