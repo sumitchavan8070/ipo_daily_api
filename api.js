@@ -59,6 +59,9 @@ const subs = require("./subs");
 const fcm = require("./fcm");
 
 const commonDetails = require("./common_details");
+
+const privacyPolicy = require("./privacy_policy");
+
 // -------------------------------------------------------------------------------------------------------
 
 app.use("/app/default", cacheMiddleware, defaultApi);
@@ -80,6 +83,9 @@ app.use("/app/subs", cacheMiddleware, subs);
 app.use("/app/fcm", fcm);
 
 app.use("/app/common-details", cacheMiddleware, commonDetails);
+
+app.use("/app/privacy_policy", cacheMiddleware, privacyPolicy);
+
 // -------------------------------------------------------------------------------------------------------
 app.get("/", (req, res) => {
   res.send(`
@@ -104,7 +110,6 @@ app.get("/", (req, res) => {
 
   `);
 });
-
 
 app.get("/api/clearCache", (req, res) => {
   console.log("Cache cleared successfully");
