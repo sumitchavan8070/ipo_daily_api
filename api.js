@@ -63,6 +63,8 @@ const commonDetails = require("./common_details");
 const privacyPolicy = require("./privacy_policy");
 const termsAndCondition = require("./terms_and_condition");
 const cancellationPolicy = require("./cancellation_policy");
+const contactUs = require("./contsct_us");
+
 
 // -------------------------------------------------------------------------------------------------------
 
@@ -89,6 +91,8 @@ app.use("/app/common-details", cacheMiddleware, commonDetails);
 app.use("/app/privacy_policy", cacheMiddleware, privacyPolicy);
 app.use("/app/terms_and_condition", cacheMiddleware, termsAndCondition);
 app.use("/app/cancellation_policy", cacheMiddleware, cancellationPolicy);
+app.use("/app/contact_us", cacheMiddleware, contactUs);
+
 
 // -------------------------------------------------------------------------------------------------------
 app.get("/", (req, res) => {
